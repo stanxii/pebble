@@ -78,7 +78,6 @@ func Open(dirname string, opts *db.Options) (*DB, error) {
 		logSeqNum:     &d.mu.versions.logSeqNum,
 		visibleSeqNum: &d.mu.versions.visibleSeqNum,
 		apply:         d.commitApply,
-		sync:          d.commitSync,
 		write:         d.commitWrite,
 	})
 	d.mu.nextJobID = 1
